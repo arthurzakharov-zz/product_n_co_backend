@@ -6,8 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "SET NODE_ENV=production & node index.js",
-    "start:dl": "SET NODE_ENV=local & nodemon index.js",
-    "start:dg": "SET NODE_ENV=global & nodemon index.js"
+    "start:dl": "SET NODE_ENV=local & nodemon index.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",

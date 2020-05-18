@@ -7,9 +7,7 @@ config.PORT = process.env.PORT || 3006;
 config.DB_URI =
   process.env.NODE_ENV === 'production'
     ? process.env.MONGO_DB_URI
-    : process.env.NODE_ENV === 'global'
-    ? ''
-    : 'mongodb://localhost:27017/product_n_co';
+    : 'mongodb://localhost:27017/products_n_co';
 
 // Export config module
 module.exports = config;
