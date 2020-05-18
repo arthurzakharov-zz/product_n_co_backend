@@ -22,7 +22,7 @@ const router = {
 app.use('/product', router.product);
 app.use(router.notFound);
 
-console.log(DB_URI);
+console.log('DB_URI: ', DB_URI);
 
 // Connect to MongoDB and start App
 mongoose
