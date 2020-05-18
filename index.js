@@ -26,13 +26,17 @@ console.log('DB_URI: ', DB_URI);
 
 // Connect to MongoDB and start App
 mongoose
-  .connect(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(DB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  })
   .then(() => {
     console.log('App is connected to MongoDB');
     // Start App
     app.listen(PORT, () =>
       console.log(
-        `App is running in ${process.env.NODE_ENV}mode on port ${PORT}`
+        `App is running in ${process.env.NODE_ENV} mode on port ${PORT}`
       )
     );
   })
