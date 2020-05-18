@@ -8,7 +8,13 @@ const {
 const ProductController = {};
 
 ProductController.getAllProducts = (req, res) => {
-  const responseProjection = projection(['name', 'description', 'price']);
+  const responseProjection = projection([
+    'name',
+    'quantity',
+    'price',
+    'color',
+    'image',
+  ]);
   ProductModel.find({}, responseProjection)
     .then((products) => {
       if (products.length) {
@@ -24,7 +30,14 @@ ProductController.getAllProducts = (req, res) => {
 
 ProductController.getProductById = (req, res) => {
   const { id } = req.params;
-  const responseProjection = projection(['name', 'description', 'price']);
+  const responseProjection = projection([
+    'name',
+    'quantity',
+    'price',
+    'color',
+    'image',
+    'description',
+  ]);
   ProductModel.findById(id, responseProjection)
     .then((productFound) => {
       if (productFound) {
@@ -41,9 +54,20 @@ ProductController.getProductById = (req, res) => {
 };
 
 ProductController.createProduct = (req, res) => {
-  const { name, description, price } = req.body;
-  checkAllRequiredKeysArePassed(['name', 'description', 'price'], req, res);
-  const product = new ProductModel({ name, description, price });
+  const { name, quantity, price, color, image, description } = req.body;
+  checkAllRequiredKeysArePassed(
+    ['name', 'price', 'quantity', 'color', 'image', 'description'],
+    req,
+    res
+  );
+  const product = new ProductModel({
+    name,
+    quantity,
+    price,
+    color,
+    image,
+    description,
+  });
   ProductModel.findOne({ name })
     .then((productFound) => {
       if (!productFound) {
@@ -74,11 +98,18 @@ ProductController.createProduct = (req, res) => {
 
 ProductController.updateProduct = (req, res) => {
   const { id } = req.params;
-  checkAllRequiredKeysArePassed(['name', 'description', 'price'], req, res);
+  checkAllRequiredKeysArePassed(
+    ['name', 'quantity', 'price', 'color', 'image', 'description'],
+    req,
+    res
+  );
   const updatedProduct = {
     name: req.body.name,
-    description: req.body.description,
+    quantity: req.body.quantity,
     price: req.body.price,
+    color: req.body.color,
+    image: req.body.image,
+    description: req.body.description,
   };
   ProductModel.findByIdAndUpdate(id, updatedProduct)
     .then((productFound) => {

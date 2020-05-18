@@ -7,8 +7,11 @@ Content-Type: application/json
 
 {
   "name": "Nice product",
-  "description": "Some text",
-  "price": 12
+  "quantity": 10,
+  "price": 12,
+  "color": "red",
+  "image": "url",
+  "description": "Some text"
 }
 
 ###
@@ -31,13 +34,16 @@ Content-Type: application/json
 // Update single product by ID
 // Create one product and fetch it's ID in order to update single product
 
-PUT http://localhost:3006/product/5ec2de01394a0b40bd378d63
+PUT http://localhost:3006/product/5ec2e5708bd68f4388ab95dc
 Content-Type: application/json
 
 {
   "name": "Nice product (Updated)",
-  "description": "Some text (Updated)",
-  "price": 12.2
+  "quantity": 105,
+  "price": 125,
+  "color": "green",
+  "image": "url (Updated)",
+  "description": "Some text (Updated)"
 }
 
 ###

@@ -8,17 +8,29 @@ const productSchema = new Schema({
     required: true,
     unique: true,
   },
-  description: {
-    type: String,
+  quantity: {
+    type: Number,
     required: true,
   },
   price: {
     type: Number,
     required: true,
   },
+  color: {
+    type: String,
+    required: true,
+  },
+  image: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
 });
 
-productSchema.index({ description: 'text' });
+// productSchema.index({ description: 'text' });
 
 const productModel = mongoose.model('Product', productSchema);
 
