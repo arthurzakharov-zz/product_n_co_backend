@@ -9,7 +9,7 @@ config.DB_URI =
     ? process.env.MONGO_DB_URI
     : process.env.NODE_ENV === 'global'
     ? ''
-    : '';
+    : 'mongodb://localhost:27017/product_n_co';
 
 // Export config module
 module.exports = config;
