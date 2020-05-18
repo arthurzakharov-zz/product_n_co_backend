@@ -3,8 +3,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
-const { PORT, DB_URI } = require('./utils/config');
-const helpers = require('./utils/helpers');
+const { PORT, DB_URI } = require('./utils/config.js');
+const helpers = require('./utils/helpers.js');
 
 // Initialize Express Application
 const app = express();
@@ -16,8 +16,8 @@ app.use(bodyParser.json());
 
 // Define routes
 const router = {
-  product: require('./routes/product'),
-  notFound: require('./routes/404'),
+  product: require('./routes/product.js'),
+  notFound: require('./routes/404.js'),
 };
 app.use('/product', router.product);
 app.use(router.notFound);
