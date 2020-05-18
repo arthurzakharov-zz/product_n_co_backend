@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 // Define routes
 const router = {
-  product: require('./routes/Product'),
+  product: require('./routes/product'),
   notFound: require('./routes/404'),
 };
 app.use('/product', router.product);
