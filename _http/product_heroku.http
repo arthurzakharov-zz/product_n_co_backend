@@ -18,7 +18,7 @@ Content-Type: application/json
 
 // Get all products
 
-GET http://localhost:3006/product
+GET https://productnco.herokuapp.com/product
 Content-Type: application/json
 
 ###
@@ -26,7 +26,7 @@ Content-Type: application/json
 // Get single product by ID
 // Create one product and fetch it's ID in order to get single product
 
-GET http://localhost:3006/product/5ec2de01394a0b40bd378d63
+GET https://productnco.herokuapp.com/product/5ec2de01394a0b40bd378d63
 Content-Type: application/json
 
 ###
@@ -34,7 +34,7 @@ Content-Type: application/json
 // Update single product by ID
 // Create one product and fetch it's ID in order to update single product
 
-PUT http://localhost:3006/product/5ec2e5708bd68f4388ab95dc
+PUT https://productnco.herokuapp.com/product/5ec2e5708bd68f4388ab95dc
 Content-Type: application/json
 
 {
@@ -51,7 +51,7 @@ Content-Type: application/json
 // Delete single product by ID
 // Create one product and fetch it's ID in order to delete single product
 
-DELETE http://localhost:3006/product/5ec2de01394a0b40bd378d63
+DELETE https://productnco.herokuapp.com/product/5ec2de01394a0b40bd378d63
 Content-Type: application/json
 
 ###
