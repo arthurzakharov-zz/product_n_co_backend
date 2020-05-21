@@ -11,6 +11,7 @@ const app = express();
 
 // Add different useful middlewares
 app.use(morgan('tiny'));
+app.use('/uploads', express.static('uploads'));
 app.use(cors());
 app.use(bodyParser.json());
 

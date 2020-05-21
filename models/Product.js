@@ -9,22 +9,22 @@ const productSchema = new Schema({
     unique: true,
   },
   quantity: {
-    type: Number,
+    type: String,
     required: true,
   },
   price: {
-    type: Number,
+    type: String,
     required: true,
   },
   color: {
     type: String,
     required: true,
   },
-  image: {
+  description: {
     type: String,
     required: true,
   },
-  description: {
+  image: {
     type: String,
     required: true,
   },

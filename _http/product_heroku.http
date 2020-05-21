@@ -6,11 +6,11 @@ POST https://productnco.herokuapp.com/product
 Content-Type: application/json
 
 {
-  "name": "Nice product",
-  "quantity": 10,
-  "price": 12,
-  "color": "red",
-  "image": "url",
+  "name": "Good product",
+  "quantity": 2,
+  "price": 15,
+  "color": "green",
+  "image": "https://w7.pngwing.com/pngs/764/605/png-transparent-lager-brahma-beer-modo-3d-computer-graphics-beer-3d-computer-graphics-beer-bottle-beer.png",
   "description": "Some text"
 }
 
@@ -34,16 +34,16 @@ Content-Type: application/json
 // Update single product by ID
 // Create one product and fetch it's ID in order to update single product
 
-PUT https://productnco.herokuapp.com/product/5ec2e5708bd68f4388ab95dc
+PUT https://productnco.herokuapp.com/product/5ec2fa4b94feb20004c46b82
 Content-Type: application/json
 
 {
-  "name": "Nice product (Updated)",
+  "name": "Nice product",
   "quantity": 105,
   "price": 125,
   "color": "green",
-  "image": "url (Updated)",
-  "description": "Some text (Updated)"
+  "image": "https://images.heb.com/is/image/HEBGrocery/001754969",
+  "description": "Some text"
 }
 
 ###

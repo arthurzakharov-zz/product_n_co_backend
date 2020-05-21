@@ -1,9 +1,5 @@
 const ProductModel = require('../models/Product.js');
-const {
-  format,
-  projection,
-  checkAllRequiredKeysArePassed,
-} = require('../utils/helpers.js');
+const { format, projection } = require('../utils/helpers.js');
 
 const ProductController = {};
 
@@ -35,8 +31,8 @@ ProductController.getProductById = (req, res) => {
     'quantity',
     'price',
     'color',
-    'image',
     'description',
+    'image',
   ]);
   ProductModel.findById(id, responseProjection)
     .then((productFound) => {
@@ -54,19 +50,14 @@ ProductController.getProductById = (req, res) => {
 };
 
 ProductController.createProduct = (req, res) => {
-  const { name, quantity, price, color, image, description } = req.body;
-  checkAllRequiredKeysArePassed(
-    ['name', 'price', 'quantity', 'color', 'image', 'description'],
-    req,
-    res
-  );
+  const { name, quantity, price, color, description } = req.body;
   const product = new ProductModel({
     name,
     quantity,
     price,
     color,
-    image,
     description,
+    image: req.file.path,
   });
   ProductModel.findOne({ name })
     .then((productFound) => {
@@ -98,17 +89,11 @@ ProductController.createProduct = (req, res) => {
 
 ProductController.updateProduct = (req, res) => {
   const { id } = req.params;
-  checkAllRequiredKeysArePassed(
-    ['name', 'quantity', 'price', 'color', 'image', 'description'],
-    req,
-    res
-  );
   const updatedProduct = {
     name: req.body.name,
     quantity: req.body.quantity,
     price: req.body.price,
     color: req.body.color,
-    image: req.body.image,
     description: req.body.description,
   };
   ProductModel.findByIdAndUpdate(id, updatedProduct)
